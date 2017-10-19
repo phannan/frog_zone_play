@@ -13,27 +13,28 @@ def setKeyframeToDisk(pObject, KFTime):
     # print 'Keyframe set for', pObject, 'at TIME =', KFTime
 
     def towersOfHanoi(diskNum, strA, strB, strC, A, B, C):
-        global KFTime  
+        global KFTime
         # IMP: We must indicate the function to seek for KFTime in global scope
-        
-    if diskNum == 1:    
+
+    if diskNum == 1:
         print 'Move', A[-1], 'from', strA, 'to', strC
-        C.append(A[len(A)-1])                # Append to C the last element of list "A"
-        A.pop(len(A)-1)                      # Remove from A the element we just copied to list "A"
-        KFTime += 1                          # Increase the keyframing time by one.
-        setKeyframeToDisk(C[-1], KFTime)     # Set a keyframe for the disk we just moved.
-        
-    else:
-        
-        towersOfHanoi(diskNum-1, strA, strC, strB, A, C, B)
-        
-        print 'Move', A[len(A) - 1], 'from', strA, 'to', strC
-        C.append(A[len(A) - 1])         # Append to C the last element of list "A"
-        A.pop(len(A)-1)                 # Remove from A the element we just copied to list "A"
-        KFTime += 1                     # Increase the keyframing time by one.
+        C.append(A[len(A) - 1])  # Append to C the last element of list "A"
+        A.pop(len(A) - 1)  # Remove from A the element we just copied to list "A"
+        KFTime += 1  # Increase the keyframing time by one.
         setKeyframeToDisk(C[-1], KFTime)  # Set a keyframe for the disk we just moved.
-        
-        towersOfHanoi(diskNum-1, strB, strA, strC, B, A, C)
+
+    else:
+
+        towersOfHanoi(diskNum - 1, strA, strC, strB, A, C, B)
+
+        print 'Move', A[len(A) - 1], 'from', strA, 'to', strC
+        C.append(A[len(A) - 1])  # Append to C the last element of list "A"
+        A.pop(len(A) - 1)  # Remove from A the element we just copied to list "A"
+        KFTime += 1  # Increase the keyframing time by one.
+        setKeyframeToDisk(C[-1], KFTime)  # Set a keyframe for the disk we just moved.
+
+        towersOfHanoi(diskNum - 1, strB, strA, strC, B, A, C)
+
 
 pegA = []
 pegB = []
