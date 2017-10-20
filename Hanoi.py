@@ -1,5 +1,11 @@
 #  https://www.python-course.eu/towers_of_hanoi.php
 
+class Hanoi:
+    def __init__(self):
+        # type: () -> object
+        pass
+
+
 def hanoi(n, source, helper, target):
     print "hanoi( ", n, source, helper, target, " called"
     if n > 0:
